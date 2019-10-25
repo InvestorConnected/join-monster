@@ -271,6 +271,7 @@ function handleTable(sqlASTNode, queryASTNode, field, gqlType, namespace, grabMa
     if (field.limit) {
         assert(field.orderBy, '`orderBy` is required with `limit`')
         //sqlASTNode.limit = unthunk(field.limit, sqlASTNode.args || {}, context)
+        console.log('dialect', sqlASTNode, queryASTNode, field, gqlType, namespace, grabMany, depth, options, context)
         sqlASTNode.limit = field.limit
     }
 
